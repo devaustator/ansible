@@ -1,5 +1,14 @@
-- name: Set authorized key taken from file
-  authorized_key:
-    user: opc
-    state: present
-    key: "{{ lookup('file', '/home/opc/.ssh/id_rsa.pub') }}"
+---
+- hosts: webservers
+  vars:
+    http_port: 80
+    max_clients: 200
+  remote_user: opc
+  tasks:
+    - name: Set authorized key taken from file
+    authorized_key:
+      user: opc
+      state: present
+      key: "{{ lookup('file', '/home/opc/.ssh/id_rsa.pub') }}"
+    become: yes
+    become_method: sudo

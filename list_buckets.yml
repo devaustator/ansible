@@ -5,8 +5,8 @@
   tasks:
     - name: List bucket facts
       oci_bucket_facts:
-         namespace_name: '<yournamespace>'
-         compartment_id: '<yourcompartmentocid>'
+         namespace_name: 'sefinland'
+         compartment_id: 'ocid1.tenancy.oc1..aaaaaaaahd4fwzcwg265v5n3sge232w6fcqf3br24ye2t6smrpmogg54t7ga'
       register: result
     - name: Dump result
       debug:
